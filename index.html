@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="./index.css">
+  <title></title>
+</head>
+<body>
+  <header class="header">
+    <h1 id="title" class="text-center">Form to join Ulan-Ude Hub</h1>
+  </header>
+  <main class="container">
+    <div class="counter">
+      <p class="counter-text">Amount of applications:</p>
+      <input class="counter-input" value="0">
+    </div>
+    <form class="form" id="survey-form" method="get">
+      <div class="form-group">
+        <label id="name-label" for="name" class="label-class">Name</label>
+        <input type="text" name="name" id="name" class="form-control" placeholder="Enter your Name" required/>
+      </div>
+      <div class="form-group">
+        <label id="email-label"  for="email" class="label-class">Email</label>
+        <input type="email" name="email" id="email" class="form-control" placeholder="What's your Email adress" required/>
+       </div>
+      <div class="form-group">
+        <label id="number-label" for="number" class="label-class">Age</label>
+        <input type="number" id="number" name="age" class="form-control" placeholder="How old are you?" min="16" max="100"/>
+      </div>
+      <div class="form-group">
+        <p class="label-class">Which options best describe your current position?</p>
+        <select id="dropdown" name="role" class="form-control"required>
+          <option disabled select value>Choose your work experience</option>
+          <option value="student">Student</option>
+          <option value="worker">Worker</option>
+          <option value="engineer">Engineer</option>
+          <option value="official">Official</option>
+          <option value="scientist">Scientist</option>
+          <option value="entrepreneur">Entrepreneur</option>
+          <option value="unemployed">Unemployed</option>
+          <option value="other">Non of the above</option>
+        </select>    
+      </div>
+      <div class="form-group checkbox">
+        <p class="label-class" for="user-agreed">Do you want to join UU Hub?</p>
+        <label>
+        <input
+               name="user-agreed"
+               value="definitely"
+               type="radio"
+               class="input-radio" checked/> Definitely </label>
+         <label>
+        <input
+               name="user-agreed"
+               value="maybe"
+               type="radio"
+               class="input-radio"/> Maybe </label>
+      </div>
+      <div class="form-group checkbox">
+        <p class="label-class">What would you like to do as a member of Ulan-Ude Hub?</p>
+        <label>
+          <input type="checkbox" 
+                 class="input-checkbox" 
+                 name="member-activity" 
+                 value="plan-activities"/>
+                 Plan activities      
+        </label>
+        <label>
+          <input type="checkbox" 
+                 class="input-checkbox" 
+                 name="member-activity" 
+                 value="organize-events"/>
+                 Organize events
+        </label>
+        <label>
+          <input type="checkbox" 
+                 class="input-checkbox" 
+                 name="member-activity" 
+                 value="crowdfundings"/>
+                 Crowdfundings
+        </label>
+        <label>
+          <input type="checkbox" 
+                 class="input-checkbox" 
+                 name="member-activity" 
+                 value="Ordinary-member"/>
+                 To be ordinary member
+        </label>
+      </div>
+      <div class="group-form">
+        <p class="label-class">Any comments or suggestions?</p>
+        <textarea id="comments" name="comment" class="input-textarea" placeholder="Your comment here..." rows="4" maxlength="400"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" id="submit" class="submit-button">Submit</button>
+      </div>
+    </form>
+  </main>
+  <footer class="footer">
+    <p>Thank you for taking a part!</p>
+  </footer>
+  <script src="./index.js"></script>
+</body>
+</html>
