@@ -1,106 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="./index.css">
-  <title></title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лист заданий</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-  <header class="header">
-    <h1 id="title" class="text-center">Form to join Ulan-Ude Hub</h1>
-  </header>
-  <main class="container">
-    <div class="counter">
-      <p class="counter-text">Amount of applications:</p>
-      <input class="counter-input" value="0">
-    </div>
-    <form class="form" id="survey-form" method="get">
-      <div class="form-group">
-        <label id="name-label" for="name" class="label-class">Name</label>
-        <input type="text" name="name" id="name" class="form-control" placeholder="Enter your Name" required/>
-      </div>
-      <div class="form-group">
-        <label id="email-label"  for="email" class="label-class">Email</label>
-        <input type="email" name="email" id="email" class="form-control" placeholder="What's your Email adress" required/>
-       </div>
-      <div class="form-group">
-        <label id="number-label" for="number" class="label-class">Age</label>
-        <input type="number" id="number" name="age" class="form-control" placeholder="How old are you?" min="16" max="100"/>
-      </div>
-      <div class="form-group">
-        <p class="label-class">Which options best describe your current position?</p>
-        <select id="dropdown" name="role" class="form-control"required>
-          <option disabled select value>Choose your work experience</option>
-          <option value="student">Student</option>
-          <option value="worker">Worker</option>
-          <option value="engineer">Engineer</option>
-          <option value="official">Official</option>
-          <option value="scientist">Scientist</option>
-          <option value="entrepreneur">Entrepreneur</option>
-          <option value="unemployed">Unemployed</option>
-          <option value="other">Non of the above</option>
-        </select>    
-      </div>
-      <div class="form-group checkbox">
-        <p class="label-class" for="user-agreed">Do you want to join UU Hub?</p>
-        <label>
-        <input
-               name="user-agreed"
-               value="definitely"
-               type="radio"
-               class="input-radio" checked/> Definitely </label>
-         <label>
-        <input
-               name="user-agreed"
-               value="maybe"
-               type="radio"
-               class="input-radio"/> Maybe </label>
-      </div>
-      <div class="form-group checkbox">
-        <p class="label-class">What would you like to do as a member of Ulan-Ude Hub?</p>
-        <label>
-          <input type="checkbox" 
-                 class="input-checkbox" 
-                 name="member-activity" 
-                 value="plan-activities"/>
-                 Plan activities      
-        </label>
-        <label>
-          <input type="checkbox" 
-                 class="input-checkbox" 
-                 name="member-activity" 
-                 value="organize-events"/>
-                 Organize events
-        </label>
-        <label>
-          <input type="checkbox" 
-                 class="input-checkbox" 
-                 name="member-activity" 
-                 value="crowdfundings"/>
-                 Crowdfundings
-        </label>
-        <label>
-          <input type="checkbox" 
-                 class="input-checkbox" 
-                 name="member-activity" 
-                 value="Ordinary-member"/>
-                 To be ordinary member
-        </label>
-      </div>
-      <div class="group-form">
-        <p class="label-class">Any comments or suggestions?</p>
-        <textarea id="comments" name="comment" class="input-textarea" placeholder="Your comment here..." rows="4" maxlength="400"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" id="submit" class="submit-button">Submit</button>
-      </div>
-    </form>
-  </main>
-  <footer class="footer">
-    <p>Thank you for taking a part!</p>
-  </footer>
-  <script src="./index.js"></script>
+    <man class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 mt-4 content">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <span class="title-card">
+                            Список заданий
+                        </span>
+                        <div id="refresh" title="Refresh"><i class="fa-solid fa-arrow-rotate-right"></i></div>
+                    </div>
+                    <div class="card-body">
+                        <form action="" class="form d-flex justify-content-between">
+                            <input type="text" id="task" class="form-control" placeholder="Что нового"
+                                title="Write a Task..." />
+                            <div class="d-flex">
+                                <button type="button" id="create-task" class="btn btn-primary ms-2"
+                                    title="Create">Создать</button>
+                                <button type="button" id="search-task" class="btn btn-success ms-2"
+                                    title="Search">Найти</button>
+                            </div>
+                        </form>
+
+                        <div id="tasks"></div>
+
+                        <div id="search"></div>
+                    </div>
+                </div>
+                <div class="error"></div>
+                <div class="clear btn btn-danger btn-lg d-none">Удалить все</div>
+            </div>
+        </div>
+    </ьфт>
+
+    <script src="./index.js"></script>
 </body>
+
 </html>
